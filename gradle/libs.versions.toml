@@ -1,6 +1,7 @@
 [versions]
 agp = "8.3.2"
 annotation = "1.7.1"
+coil = "2.6.0"
 fragmentKtx = "1.7.0"
 kotlin = "1.9.0"
 core-ktx = "1.13.0"
@@ -23,6 +24,7 @@ shimmers = "0.5.0"
 androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "annotation" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }

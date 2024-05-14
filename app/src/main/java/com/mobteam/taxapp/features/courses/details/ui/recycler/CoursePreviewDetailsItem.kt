@@ -4,13 +4,14 @@ import androidx.annotation.StringRes
 import com.mobteam.taxapp.R
 import ru.tinkoff.mobile.tech.ti_recycler.base.ViewTyped
 
-data class CourseDetailsItem(
+data class CoursePreviewDetailsItem(
     val courseName: String,
     val courseImageUrl: String,
     val description: String,
     val courseLessonsCount: Int,
     @StringRes
     val studyButtonText: Int,
-    override val viewType: Int = R.layout.item_course_details,
-    override val uid: String = CourseDetailsItem::class.java.name
+    val isStudyButtonVisible: Boolean,
+    override val viewType: Int = R.layout.item_course_preview_details,
+    override val uid: String = CoursePreviewDetailsItem::class.java.name
 ) : ViewTyped

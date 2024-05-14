@@ -5,4 +5,5 @@ data class Question(
     val answers: List<Answer> = emptyList(),
     val userAnswerId: Answer? = null,
     val correctAnswerId: String,
+    val explanation: String
 )
