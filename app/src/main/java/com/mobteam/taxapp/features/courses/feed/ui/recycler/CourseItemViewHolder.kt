@@ -16,7 +16,7 @@ class CourseItemViewHolder(
             courseName.text = item.courseName
             courseDescription.text = item.courseDescription
             courseDuration.text = courseDuration.context.getString(
-                R.string.course_duration_text,
+                R.string.duration_text,
                 item.courseDuration
             )
         }

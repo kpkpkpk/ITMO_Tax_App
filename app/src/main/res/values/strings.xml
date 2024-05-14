@@ -2,7 +2,7 @@
     <string name="app_name">TaxApp</string>
     <string name="all_courses_chip_text">Все курсы</string>
     <string name="my_courses_chip_text">Мои курсы</string>
-    <string name="course_duration_text">%1$d мин.</string>
+    <string name="duration_text">%1$d мин.</string>
     <string name="search_hint">Поиск</string>
     <string name="courses_title">Курсы</string>
     <string name="lesson_number">Урок %1$d</string>
@@ -11,4 +11,8 @@
         <item quantity="few">%1$d урока</item>
         <item quantity="other">%1$d уроков</item>
     </plurals>
+    <string name="study_button_text">Начать обучение</string>
+    <string name="lesson_video_content_desc">Lesson Video</string>
+    <string name="dot_symbol">•</string>
+    <string name="lesson_start_quiz_button">Пройти опрос</string>
 </resources>
