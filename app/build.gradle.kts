@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,7 +48,12 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.androidx.annotation)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.ti.recycler)
+    implementation(libs.ti.recycler.coroutines)
+    implementation(libs.viewbindingpropertydelegate.noreflection)
+    implementation(libs.facebook.shimmers)
 //    implementation(libs.networking.retrofit)
 //    implementation(libs.networking.retrofit.converter.kotlinx.serializtion)
     implementation(libs.networking.okHttp)
