@@ -9,6 +9,10 @@ class NotesViewModelFactory(
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return NotesViewModel(notesRepository) as T
+        return when(modelClass) {
+            NotesViewModel::class.java -> NotesViewModel(notesRepository) as T
+            NoteViewModel::class.java -> NoteViewModel(notesRepository) as T
+            else -> throw IllegalArgumentException("UNKNOWN VIEW MODEL CLASS")
+        }
     }
 }

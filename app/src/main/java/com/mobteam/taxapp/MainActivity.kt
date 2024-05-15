@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onResume() {
         super.onResume()
         supportFragmentManager.commit {
-            replace(binding.container.id, TermsFragment.newInstance())
+            replace(binding.container.id, NotesFragment.newInstance())
             addToBackStack(null)
         }
     }
