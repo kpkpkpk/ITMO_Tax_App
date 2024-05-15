@@ -102,4 +102,10 @@ class CoursesFragment : Fragment(R.layout.fragment_courses) {
         super.onDestroyView()
         recycler = null
     }
+
+    companion object {
+        fun newInstance() : CoursesFragment {
+            return CoursesFragment()
+        }
+    }
 }

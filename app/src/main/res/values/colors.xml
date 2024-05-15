@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="shimmer_color">#17000000</color>
     <color name="background">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="gray">#1F767680</color>
+    <color name="blue">#007AFF</color>
 </resources>

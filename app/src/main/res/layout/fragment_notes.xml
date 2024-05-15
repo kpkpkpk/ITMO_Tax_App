@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".features.notes.ui.NotesFragment"
-    android:orientation="vertical"
-    android:paddingHorizontal="16dp">
+    android:orientation="vertical">
     
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -20,13 +19,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="@string/notes_title"
-            app:menu="@menu/search_menu"/>
+            app:menu="@menu/search_menu"
+            app:titleTextAppearance="@style/TitleTextStyle"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_note"/>
+        tools:listitem="@layout/item_note"
+        android:layout_marginHorizontal="16dp"/>
 
 </LinearLayout>
