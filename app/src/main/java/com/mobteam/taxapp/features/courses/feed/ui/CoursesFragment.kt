@@ -21,7 +21,6 @@ import com.mobteam.taxapp.features.courses.feed.presentation.CoursesViewModelFac
 import com.mobteam.taxapp.features.courses.feed.ui.recycler.CourseViewHolderFactory
 import com.mobteam.taxapp.features.courses.feed.ui.recycler.factory.CoursesItemFactory
 import com.mobteam.taxapp.features.courses.feed.ui.recycler.factory.CoursesShimmerFactory
-import com.mobteam.taxapp.features.search_view_ext.SearchMenuProvider
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.tinkoff.mobile.tech.ti_recycler.base.ViewTyped
@@ -46,7 +45,7 @@ class CoursesFragment : Fragment(R.layout.fragment_courses) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
         initChips()
-        initToolbar()
+//        initToolbar()
         coursesViewModel.init()
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
@@ -57,16 +56,16 @@ class CoursesFragment : Fragment(R.layout.fragment_courses) {
         }
     }
 
-    private fun initToolbar() {
-        binding.toolbar.addMenuProvider(SearchMenuProvider({}, object : OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean = false
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-
-        }))
-    }
+//    private fun initToolbar() {
+//        binding.toolbar.addMenuProvider(SearchMenuProvider({}, object : OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean = false
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                return true
+//            }
+//
+//        }))
+//    } TODO ИСПРАВИТЬ
 
     private fun initChips() {
         binding.allCourses.setOnClickListener {
@@ -83,7 +82,7 @@ class CoursesFragment : Fragment(R.layout.fragment_courses) {
 
     private fun render(uiState: CoursesUiState) {
         renderChips(uiState.coursesFilter)
-        binding.toolbar.menu.findItem(R.id.action_search).isVisible = uiState.isLoading.not()
+//   TODO ИСПРАВИТЬ     binding.toolbar.menu.findItem(R.id.action_search).isVisible = uiState.isLoading.not()
         binding.chipGroupLayout.isVisible = uiState.isLoading.not()
         recycler?.setItems(uiState.uiItems)
     }

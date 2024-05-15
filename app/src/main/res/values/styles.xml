@@ -3,4 +3,9 @@
 
     <style name="Widget.Material3.Chip.Filter.PrimaryColor" parent="Widget.Material3.Chip.Filter">
     </style>
+
+    <style name="roundedCorners" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>
