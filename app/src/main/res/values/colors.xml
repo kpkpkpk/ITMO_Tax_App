@@ -10,4 +10,8 @@
     <color name="blue">#007AFF</color>
     <color name="active_bottom_item_color">#956DFF</color>
     <color name="inactive_bottom_item_color">#FF3C434D</color>
+    <color name="positive_hint">#E0F9DC</color>
+    <color name="positive_text_hint">#1A8C18</color>
+    <color name="negative_hint">#F9DEDC</color>
+    <color name="negative_text_hint">#8C1D18</color>
 </resources>

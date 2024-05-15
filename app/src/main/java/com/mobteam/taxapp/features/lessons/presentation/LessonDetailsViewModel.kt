@@ -3,7 +3,6 @@ package com.mobteam.taxapp.features.lessons.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mobteam.taxapp.domain.CoursesRepository
-import com.mobteam.taxapp.domain.model.Course
 import com.mobteam.taxapp.domain.model.Lesson
 import com.mobteam.taxapp.features.lessons.ui.LessonDetailsUiState
 import com.mobteam.taxapp.features.lessons.ui.recycler.LessonContentItemsFactory
