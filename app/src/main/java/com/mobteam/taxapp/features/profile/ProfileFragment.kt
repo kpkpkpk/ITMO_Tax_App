@@ -21,6 +21,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         binding.exitButton.setOnClickListener {
             requireActivity().supportFragmentManager.commit {
                 replace(R.id.container, AuthFragment.newInstance())
+                addToBackStack(null)
             }
         }
     }

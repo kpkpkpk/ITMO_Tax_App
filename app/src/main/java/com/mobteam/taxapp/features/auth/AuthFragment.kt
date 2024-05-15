@@ -38,6 +38,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
         }
 
         binding.joinButton.setOnClickListener {
+            IsUserAuth.flow.tryEmit(true)
             requireActivity().supportFragmentManager.commit {
                 replace(R.id.container, CoursesFragment.newInstance())
             }
@@ -45,7 +46,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
     }
 
     companion object {
-        fun newInstance() : AuthFragment {
+        fun newInstance(): AuthFragment {
             return AuthFragment()
         }
     }

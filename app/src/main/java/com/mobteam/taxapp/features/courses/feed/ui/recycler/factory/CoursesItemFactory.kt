@@ -7,6 +7,7 @@ class CoursesItemFactory {
 
     fun create(course: Course): CourseItem {
         return CourseItem(
+            course = course,
             courseName = course.name,
             courseDescription = course.shortDescription,
             courseDuration = course.duration

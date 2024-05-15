@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -16,6 +18,7 @@ import com.mobteam.taxapp.features.lessons.presentation.LessonDetailsViewModel
 import com.mobteam.taxapp.features.lessons.presentation.LessonDetailsViewModelFactory
 import com.mobteam.taxapp.features.lessons.ui.recycler.LessonContentItemsFactory
 import com.mobteam.taxapp.features.lessons.ui.recycler.LessonDetailsViewHolderFactory
+import com.mobteam.taxapp.features.quizes.ui.QuizFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.tinkoff.mobile.tech.ti_recycler.base.ViewTyped
@@ -51,6 +54,15 @@ class LessonDetailsFragment : Fragment(R.layout.fragment_lesson_details) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
         viewModel.init(lessonId)
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+        binding.studyButton.setOnClickListener {
+            requireActivity().supportFragmentManager.commit {
+                replace(R.id.container, QuizFragment())
+                addToBackStack(null)
+            }
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 viewModel.state.collectLatest {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -15,9 +16,11 @@ import com.mobteam.taxapp.domain.CoursesRepository
 import com.mobteam.taxapp.features.courses.details.presentation.CourseDetailsViewModel
 import com.mobteam.taxapp.features.courses.details.presentation.CourseDetailsViewModelFactory
 import com.mobteam.taxapp.features.courses.details.ui.recycler.CourseDetailsViewHolderFactory
+import com.mobteam.taxapp.features.courses.details.ui.recycler.CourseLessonItem
 import com.mobteam.taxapp.features.courses.details.ui.recycler.CoursePreviewDetailsItem
 import com.mobteam.taxapp.features.courses.details.ui.recycler.CoursePreviewDetailsItemFactory
 import com.mobteam.taxapp.features.courses.details.ui.recycler.LessonToCourseLessonItemMapper
+import com.mobteam.taxapp.features.lessons.ui.LessonDetailsFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
@@ -56,6 +59,9 @@ class CourseDetailsFragment : Fragment(R.layout.fragment_courses_details) {
         super.onViewCreated(view, savedInstanceState)
         courseDetailsViewModel.init(courseId)
         initRecycler()
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 courseDetailsViewModel.state.collectLatest {
@@ -68,6 +74,14 @@ class CourseDetailsFragment : Fragment(R.layout.fragment_courses_details) {
 
     private fun initRecycler() {
         recycler = TiRecyclerCoroutines(binding.recycler, CourseDetailsViewHolderFactory())
+        viewLifecycleOwner.lifecycleScope.launch {
+            recycler?.clickedItem<CourseLessonItem>(R.layout.item_lesson)?.collectLatest {
+                this@CourseDetailsFragment.requireActivity().supportFragmentManager.commit {
+                    replace(R.id.container, LessonDetailsFragment.newInstance(it.lessonName))
+                    addToBackStack(null)
+                }
+            }
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             recycler?.clickedViewId<CoursePreviewDetailsItem>(
                 viewType = R.layout.item_course_preview_details,

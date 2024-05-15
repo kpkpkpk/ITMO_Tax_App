@@ -30,4 +30,8 @@ class CoursesViewModel(
     fun changeFilter(coursesFilter: CoursesFilter) {
         _state.value = _state.value.copy(coursesFiler = coursesFilter)
     }
+
+    fun setQuery(newText: String?) {
+        _state.value = _state.value.copy(currentQuery = newText)
+    }
 }

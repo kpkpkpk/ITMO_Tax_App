@@ -25,11 +25,15 @@ class CoursesUiStateMapper(
             coursesShimmerFactory.create()
         } else {
             state.courses.filter { course ->
-                if (state.coursesFiler == MY_COURSES) {
+                val checkTabCondition = if (state.coursesFiler == MY_COURSES) {
                     course.isStarted
                 } else {
                     true
                 }
+                checkTabCondition && course.name.contains(
+                    state.currentQuery.orEmpty().trim(),
+                    ignoreCase = true
+                )
             }.map(coursesItemFactory::create)
         }
     }

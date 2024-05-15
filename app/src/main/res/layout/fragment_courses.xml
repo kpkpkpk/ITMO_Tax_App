@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -17,9 +17,10 @@
             style="@style/Widget.Material3.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:menu="@menu/search_menu"
             app:title="@string/courses_title"
-            app:titleTextColor="@color/black"
-            app:titleTextAppearance="@style/TitleTextStyle"/>
+            app:titleTextAppearance="@style/TitleTextStyle"
+            app:titleTextColor="@color/black" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroupLayout"
@@ -53,7 +54,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        tools:listitem="@layout/item_course"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_course" />
 
 </LinearLayout>
