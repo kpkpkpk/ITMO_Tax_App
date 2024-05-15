@@ -1,9 +1,9 @@
-package com.mobteam.taxapp.features.courses.feed.ui
+package com.mobteam.taxapp.features.notes.ui
 
 import com.mobteam.taxapp.domain.model.Note
 import com.mobteam.taxapp.features.notes.ui.recycler.NoteItem
 
-class StateToUiStateMapper {
+class NotesStateToUiStateMapper {
 
     fun mapToUiState(notes: List<Note>): List<NoteItem> {
 
