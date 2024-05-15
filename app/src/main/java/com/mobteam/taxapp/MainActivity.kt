@@ -1,14 +1,10 @@
 package com.mobteam.taxapp
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mobteam.taxapp.databinding.ActivityMainBinding
-import com.mobteam.taxapp.features.courses.details.ui.CourseDetailsFragment
-import com.mobteam.taxapp.features.courses.feed.ui.CoursesFragment
-import com.mobteam.taxapp.features.lessons.ui.LessonDetailsFragment
+import com.mobteam.taxapp.features.notes.ui.NotesFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private val binding by viewBinding(ActivityMainBinding::bind)
@@ -16,7 +12,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onResume() {
         super.onResume()
         supportFragmentManager.commit {
-            replace(binding.container.id, LessonDetailsFragment.newInstance("0"))
+            replace(binding.container.id, NotesFragment.newInstance())
         }
     }
 }

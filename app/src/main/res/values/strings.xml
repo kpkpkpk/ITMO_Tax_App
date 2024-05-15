@@ -15,4 +15,6 @@
     <string name="lesson_video_content_desc">Lesson Video</string>
     <string name="dot_symbol">•</string>
     <string name="lesson_start_quiz_button">Пройти опрос</string>
+    <string name="notes_title">Статьи</string>
+
 </resources>
