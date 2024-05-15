@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +16,7 @@ import com.mobteam.taxapp.R
 import com.mobteam.taxapp.databinding.FragmentTermsBinding
 import com.mobteam.taxapp.domain.TermsRepository
 import com.mobteam.taxapp.domain.model.Term
+import com.mobteam.taxapp.features.courses.feed.ui.CoursesFragment
 import com.mobteam.taxapp.features.terms.presentation.TermsViewModel
 import com.mobteam.taxapp.features.terms.presentation.TermsViewModelFactory
 import com.mobteam.taxapp.features.terms.ui.recycler.TermsAdapter
@@ -32,7 +35,14 @@ class TermsFragment : Fragment(R.layout.fragment_terms) {
     )
 
     private val termsAdapter : TermsAdapter by lazy(NONE) {
-        TermsAdapter()
+        TermsAdapter(object : TermClickedCallback {
+            override fun onTermClicked(termId: Int) {
+                requireActivity().supportFragmentManager.commit {
+                    replace(R.id.container, TermFragment.newInstance(termId))
+                    addToBackStack(null)
+                }
+            }
+        })
     }
 
     private val stateToUiStateMapper : TermsStateToUiStateMapper by lazy(NONE) {
