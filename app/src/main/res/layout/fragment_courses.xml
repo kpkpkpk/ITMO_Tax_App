@@ -9,14 +9,17 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             style="@style/Widget.Material3.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="@string/courses_title" />
+            app:title="@string/courses_title"
+            app:titleTextColor="@color/black"
+            app:titleTextAppearance="@style/TitleTextStyle"/>
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroupLayout"
