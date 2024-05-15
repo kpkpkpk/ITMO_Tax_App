@@ -32,4 +32,14 @@ class CoursesRepository {
     fun getQuestions(): List<Question> {
         return Courses.course.lessons.first().quiz.questions
     }
+
+    fun setPassedQuiz() {
+        Courses.course = Courses.course.copy(lessons = Courses.course.lessons.map {
+            if (it.lessonNumber == 1) {
+                it.copy(quiz = Courses.course.lessons.first().quiz.copy(currentQuestion = Courses.course.lessons.first().quiz.questions.last()))
+            } else {
+                it
+            }
+        })
+    }
 }

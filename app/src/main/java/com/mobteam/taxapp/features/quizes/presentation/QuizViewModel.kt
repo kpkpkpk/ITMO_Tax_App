@@ -35,4 +35,8 @@ class QuizViewModel(
     fun setAnswer(answer: Answer?) {
         _state.value = _state.value.copy(selectedAnswer = answer)
     }
+
+    fun setPassed() {
+        coursesRepository.setPassedQuiz()
+    }
 }

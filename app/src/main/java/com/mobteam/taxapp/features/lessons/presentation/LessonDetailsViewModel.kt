@@ -22,14 +22,15 @@ class LessonDetailsViewModel(
         get() = _state.map {
             LessonDetailsUiState(
                 uiItems = lessonContentItemsFactory.create(it),
-                title = it?.name.orEmpty()
+                title = it?.name.orEmpty(),
+                isStartQuizButtonVisible = _state.value?.quiz?.currentQuestion != _state.value?.quiz?.questions?.last()
             )
         }
 
     fun init(lessonId: String = "") {
         viewModelScope.launch {
-            val course = coursesRepository.getLessonById(lessonId)
-            _state.value = course
+            val lesson = coursesRepository.getLessonById(lessonId)
+            _state.value = lesson
         }
     }
 }

@@ -9,6 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mobteam.taxapp.R
 import com.mobteam.taxapp.databinding.FragmentProfileBinding
 import com.mobteam.taxapp.features.auth.AuthFragment
+import com.mobteam.taxapp.features.auth.IsUserAuth
 import com.mobteam.taxapp.features.notes.ui.NotesFragment
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -19,6 +20,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.exitButton.setOnClickListener {
+            IsUserAuth.flow.tryEmit(false)
             requireActivity().supportFragmentManager.commit {
                 replace(R.id.container, AuthFragment.newInstance())
                 addToBackStack(null)
@@ -27,7 +29,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     companion object {
-        fun newInstance() : ProfileFragment {
+        fun newInstance(): ProfileFragment {
             return ProfileFragment()
         }
     }

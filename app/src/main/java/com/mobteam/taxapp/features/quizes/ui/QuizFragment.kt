@@ -56,9 +56,11 @@ class QuizFragment : Fragment(R.layout.fragment_quiz) {
                     R.string.quiz_button_continue
                 }
             )
+            continueButton.isVisible = state.selectedAnswer != null
             continueButton.setOnClickListener {
                 if (state.questions.indexOf(state.currentQuestion) == state.questions.size - 1) {
                     requireActivity().supportFragmentManager.popBackStack()
+                    viewModel.setPassed()
                 } else {
                     viewModel.clickNext()
                 }
