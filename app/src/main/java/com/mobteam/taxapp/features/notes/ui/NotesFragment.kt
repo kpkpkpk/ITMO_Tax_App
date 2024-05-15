@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -17,6 +18,7 @@ import com.mobteam.taxapp.domain.model.Note
 import com.mobteam.taxapp.features.notes.presentation.NotesViewModel
 import com.mobteam.taxapp.features.notes.presentation.NotesViewModelFactory
 import com.mobteam.taxapp.features.notes.ui.recycler.NotesAdapter
+import com.mobteam.taxapp.features.terms.ui.TermFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlin.LazyThreadSafetyMode.NONE
@@ -34,7 +36,14 @@ class NotesFragment : Fragment(R.layout.fragment_notes) {
         NotesStateToUiStateMapper()
     }
     private val notesAdapter: NotesAdapter by lazy(NONE) {
-        NotesAdapter()
+        NotesAdapter(object : NoteClickedCallback {
+            override fun onNoteClicked(noteId: Int) {
+                requireActivity().supportFragmentManager.commit {
+                    replace(R.id.container, NoteFragment.newInstance(noteId))
+                    addToBackStack(null)
+                }
+            }
+        })
     }
 
 

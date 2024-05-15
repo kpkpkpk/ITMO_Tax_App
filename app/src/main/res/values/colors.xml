@@ -6,5 +6,8 @@
     <color name="background">#FFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="gray">#1F767680</color>
+    <color name="bottom_nav_color">#F7F2FA</color>
     <color name="blue">#007AFF</color>
+    <color name="active_bottom_item_color">#956DFF</color>
+    <color name="inactive_bottom_item_color">#FF3C434D</color>
 </resources>

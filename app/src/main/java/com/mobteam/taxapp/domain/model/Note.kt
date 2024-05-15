@@ -7,5 +7,6 @@ data class Note(
     val authorAvatarImage : Int = android.R.color.holo_purple,
     val noteHeaderText : String,
     val noteSubHeadText : String,
-    val noteImage : Int = R.drawable.note_image
+    val noteImage : Int = R.drawable.note_image,
+    val content : String
 )

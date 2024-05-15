@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_courses"
+        android:title="channels"
+        android:icon="@drawable/courses_icon"/>
+    <item
+        android:id="@+id/action_notes"
+        android:title="people"
+        android:icon="@drawable/notes_icon"/>
+    <item
+        android:id="@+id/action_terms"
+        android:title="profile"
+        android:icon="@drawable/terms_icon"/>
+    <item
+        android:id="@+id/action_profile"
+        android:title="profile"
+        android:icon="@drawable/profile_icon"/>
+</menu>
