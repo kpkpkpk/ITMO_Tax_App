@@ -9,6 +9,10 @@ class TermsViewModelFactory(
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return TermsViewModel(termsRepository) as T
+        return when(modelClass) {
+            TermsViewModel::class.java ->TermsViewModel(termsRepository) as T
+            TermViewModel::class.java ->TermViewModel(termsRepository) as T
+            else -> throw IllegalArgumentException("UNKNOWN VIEW MODEL CLASS")
+        }
     }
 }

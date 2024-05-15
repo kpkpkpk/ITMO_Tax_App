@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="@string/terms_title"
+            app:titleTextColor="@color/black"
             app:menu="@menu/search_menu"
             app:titleTextAppearance="@style/TitleTextStyle"/>
     </com.google.android.material.appbar.AppBarLayout>
