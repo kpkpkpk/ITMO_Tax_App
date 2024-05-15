@@ -1,8 +1,6 @@
 package com.mobteam.taxapp.features.lessons.ui.recycler
 
-import com.mobteam.taxapp.R
 import com.mobteam.taxapp.domain.model.Lesson
-import com.mobteam.taxapp.features.recycler_ext.SimpleItem
 import ru.tinkoff.mobile.tech.ti_recycler.base.ViewTyped
 
 class LessonContentItemsFactory {

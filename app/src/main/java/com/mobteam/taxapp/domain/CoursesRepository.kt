@@ -34,10 +34,13 @@ class CoursesRepository {
                                 Answer(answerId = "1A", text = "13%"),
                                 Answer(answerId = "1B", text = "10%"),
                                 Answer(answerId = "1C", text = "15%"),
-                                Answer(answerId = "1D", text = "13%")
+                                Answer(answerId = "1D", text = "23%")
                             ),
                             correctAnswerId = "1A",
-                            explanation = "Налог составляет 13% в рф. просмотрите еще раз 1ый урок"
+                            imageUrl = "https://static4.banki.ru/ugc/5e/9f/00/b3/10975826.jpg",
+                            negativeMessage = "Налог составляет 13% в рф. просмотрите еще раз 1ый урок",
+                            positiveMessage = "Верно! Налог составляет 13% в рф."
+
                         ),
                         Question(
                             questionName = "Question 2",
@@ -48,7 +51,8 @@ class CoursesRepository {
                                 Answer(answerId = "2D", text = "Answer 2D")
                             ),
                             correctAnswerId = "2B",
-                            explanation = "Налог составляет 13% в рф. просмотрите еще раз 1ый урок"
+                            negativeMessage = "Налог составляет 13% в рф. просмотрите еще раз 1ый урок",
+                            positiveMessage = "Верно! Налог составляет 13% в рф."
                         )
                     )
                 )
@@ -75,6 +79,10 @@ class CoursesRepository {
 
     suspend fun getCourseDetails(courseId: String): Course {
         return course
+    }
+
+    suspend fun getQuestions(): List<Question> {
+        return course.lessons.first().quiz.questions
     }
 
     suspend fun setStartedCourse() {

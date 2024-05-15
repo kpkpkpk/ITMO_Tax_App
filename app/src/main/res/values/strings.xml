@@ -31,4 +31,7 @@
     <string name="register">Регистрация</string>
     <string name="enter">Вход</string>
 
+    <string name="quiz_button_continue">Далее</string>
+    <string name="quiz_button_end">Завершить опрос</string>
+    <string name="quiz_currentProgress">%1$d/%2$d</string>
 </resources>
