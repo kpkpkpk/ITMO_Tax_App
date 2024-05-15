@@ -16,5 +16,6 @@
     <string name="dot_symbol">•</string>
     <string name="lesson_start_quiz_button">Пройти опрос</string>
     <string name="notes_title">Статьи</string>
+    <string name="terms_title">Термины</string>
 
 </resources>
