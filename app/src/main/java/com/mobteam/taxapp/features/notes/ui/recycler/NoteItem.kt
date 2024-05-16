@@ -5,5 +5,5 @@ data class NoteItem(
     val authorAvatarImage : Int,
     val noteHeaderText : String,
     val noteSubHeadText : String,
-    val noteImage : Int
+    val noteImage : String
 )

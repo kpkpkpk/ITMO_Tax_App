@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
+import coil.load
 import com.mobteam.taxapp.R
 import com.mobteam.taxapp.databinding.FragmentNoteBinding
 import com.mobteam.taxapp.domain.NotesRepository
@@ -37,6 +38,7 @@ class NoteFragment : Fragment(R.layout.fragment_note) {
         binding.noteHeader.text = note.noteHeaderText
         binding.noteSubHead.text = note.noteSubHeadText
         binding.noteAuthorAvatar.setImageResource(note.authorAvatarImage)
+        binding.noteImage.load(note.noteImage)
 
         binding.toolbar.setNavigationOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()

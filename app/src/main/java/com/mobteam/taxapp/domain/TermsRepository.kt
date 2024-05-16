@@ -5,17 +5,90 @@ import com.mobteam.taxapp.domain.model.Term
 class TermsRepository {
 
     private val terms = listOf(
-        Term(id = 1, termHeaderText = "Header 1", termSubHeadText ="Subheader 1", content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 2, termHeaderText = "Header 2", termSubHeadText ="Subheader 2",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 3, termHeaderText = "Header 3", termSubHeadText ="Subheader 3",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 4, termHeaderText = "Header 4", termSubHeadText ="Subheader 4",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 5, termHeaderText = "Header 5", termSubHeadText ="Subheader 5",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 6, termHeaderText = "Header 6", termSubHeadText ="Subheader 6",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 7, termHeaderText = "Header 7", termSubHeadText ="Subheader 7",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 8, termHeaderText = "Header 8", termSubHeadText ="Subheader 8",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 9, termHeaderText = "Header 9", termSubHeadText ="Subheader 9",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
-        Term(id = 10, termHeaderText = "Header 10", termSubHeadText = "Subheader 10",content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor")
+        Term(id = 1, termHeaderText = "Что такое налоги?", termSubHeadText ="Введение в налоги", termImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGmgc0fUQnyfZHXHBJbkBUbh1KwFidU_wvxHzG31SlA&s", content = """
+        Налоги - это обязательные финансовые взносы, налагаемые государством на физических и юридических лиц. Налоги необходимы для финансирования государственных расходов и предоставления общественных услуг, таких как образование, здравоохранение и инфраструктура.
+
+         Основные виды налогов:
+        - Подоходный налог: Взимается с доходов физических и юридических лиц.
+        - Налог на добавленную стоимость (НДС): Взимается при продаже товаров и услуг.
+        - Налог на имущество: Взимается за владение недвижимостью.
+        - Акцизные налоги: Налоги на определенные товары, такие как табак и алкоголь.
+    """.trimIndent()),
+        Term(id = 2, termHeaderText = "Подоходный налог", termSubHeadText ="Налогообложение доходов", termImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSepyUcQByKV8XRqgJh6EdPEQqoFJb65RpL_DzbV8B6-g&s", content = """
+        Подоходный налог - это налог, взимаемый с доходов физических лиц и компаний. Этот налог является основным источником доходов государства.
+
+         Основные моменты:
+        - Налогооблагаемый доход: Сумма дохода, подлежащая налогообложению, после вычета всех разрешенных вычетов и освобождений.
+        - Налоговые ставки: Ставки налога зависят от уровня дохода и могут быть прогрессивными.
+        - Сроки уплаты: Налог должен быть уплачен в установленный законодательством срок.
+    """.trimIndent()),
+        Term(id = 3, termHeaderText = "Налоговые вычеты", termSubHeadText ="Снижение налогооблагаемой базы", termImage = "https://www.admkumertau.ru/images/news/10977/202402081.jpg", content = """
+        Налоговые вычеты позволяют уменьшить налогооблагаемую базу и, соответственно, общую сумму налога, подлежащую уплате.
+
+         Основные виды налоговых вычетов:
+        - Стандартный вычет: Фиксированная сумма, которая может быть вычтена из дохода налогоплательщика.
+        - Имущественный вычет: Предоставляется при покупке жилья или оплате ипотечных процентов.
+        - Социальный вычет: Включает расходы на обучение, лечение и благотворительные пожертвования.
+        - Профессиональные вычеты: Вычеты, связанные с профессиональной деятельностью налогоплательщика.
+    """.trimIndent()),
+        Term(id = 4, termHeaderText = "Налог на добавленную стоимость (НДС)", termSubHeadText ="Косвенный налог", termImage = "https://avatars.dzeninfra.ru/get-zen_doc/9719727/pub_64805c285c6cb562641d0443_64805d374eb87e12b007a959/scale_1200", content = """
+        Налог на добавленную стоимость (НДС) - это косвенный налог, взимаемый при продаже товаров и услуг на всех этапах производства и реализации.
+
+         Основные моменты:
+        - Ставки НДС: Могут варьироваться в зависимости от типа товаров и услуг.
+        - Объект налогообложения: Продажа товаров, выполнение работ и оказание услуг.
+        - Порядок исчисления и уплаты: НДС начисляется и уплачивается в бюджет в установленные законодательством сроки.
+    """.trimIndent()),
+        Term(id = 5, termHeaderText = "Налог на имущество", termSubHeadText ="Налог на недвижимость", termImage = "https://pgt68.ru/wp-content/uploads/2022/10/500x339.jpg", content = """
+        Налог на имущество взимается за владение недвижимостью и другим имуществом.
+
+         Основные моменты:
+        - Объект налогообложения: Недвижимое имущество, такое как земельные участки, здания и сооружения.
+        - Налоговая база: Определяется исходя из кадастровой стоимости имущества.
+        - Ставки налога: Могут варьироваться в зависимости от региона и типа имущества.
+    """.trimIndent()),
+        Term(id = 6, termHeaderText = "Акцизные налоги", termSubHeadText ="Налоги на товары", termImage = "https://media.istockphoto.com/id/1397199087/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B0%D0%BA%D1%86%D0%B8%D0%B7%D0%BD%D1%8B%D0%B9-%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0.jpg?s=612x612&w=0&k=20&c=SL1SK_X7_7-Lw2YJhBi42alMqH6a0snnu8Xn0qI9SM8=", content = """
+        Акцизные налоги - это налоги на определенные виды товаров, такие как алкогольные напитки, табачные изделия и топливо.
+
+         Основные моменты:
+        - Объект налогообложения: Определенные виды товаров, подлежащие акцизному налогообложению.
+        - Ставки акцизов: Могут быть фиксированными или процентными в зависимости от количества или стоимости товара.
+        - Порядок исчисления и уплаты: Акцизы начисляются производителями или импортерами и уплачиваются в бюджет.
+    """.trimIndent()),
+        Term(id = 7, termHeaderText = "Налоговые кредиты", termSubHeadText ="Снижение налоговой обязанности", termImage = "https://fond83.ru/upload/iblock/c7f/c7fbac53b5586607e2b3f6fb8780b422.png", content = """
+        Налоговые кредиты позволяют снизить общую сумму налога, подлежащую уплате, и часто предоставляются за выполнение определенных условий или осуществление определенных видов деятельности.
+
+         Основные виды налоговых кредитов:
+        - Кредит на детей: Предоставляется налогоплательщикам, имеющим несовершеннолетних детей.
+        - Кредит на обучение: Предоставляется за оплату расходов на обучение.
+        - Кредит на энергоэффективные улучшения: Предоставляется за установку энергоэффективного оборудования.
+    """.trimIndent()),
+        Term(id = 8, termHeaderText = "Самозанятость и налоги", termSubHeadText ="Налоги для самозанятых", termImage = "https://life.akbars.ru/upload/iblock/b68/v2nv08tvf6dgm0j3rouwa9pxa7hrkppp.png", content = """
+        Самозанятые лица обязаны уплачивать налоги на доходы от своей деятельности и социальные налоги, такие как налог на социальное обеспечение и медицинское страхование.
+
+         Основные моменты:
+        - Налог на самозанятость: Включает налоги на социальное обеспечение и медицинское страхование.
+        - Расчет налогов: Самозанятые лица должны самостоятельно рассчитывать и уплачивать налоги.
+        - Вычеты для самозанятых: Самозанятые лица могут претендовать на вычеты, связанные с их профессиональной деятельностью.
+    """.trimIndent()),
+        Term(id = 9, termHeaderText = "Налоговые проверки", termSubHeadText ="Аудит налоговых деклараций", termImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-NRSngUMbrC_8taDVDnGoMUU1427mwRsFAiKOduF2LA&s", content = """
+        Налоговая проверка - это процесс проверки налоговых деклараций налогоплательщиков налоговыми органами для обеспечения их точности и полноты.
+
+         Основные моменты:
+        - Виды проверок: Могут быть камеральными (по документам) и выездными (на месте).
+        - Причины проверки: Могут включать ошибки в декларациях, подозрения на уклонение от налогов или выборочную проверку.
+        - Процесс проверки: Включает запрос документов, встречу с налогоплательщиком и вынесение решения.
+    """.trimIndent()),
+        Term(id = 10, termHeaderText = "Международное налогообложение", termSubHeadText ="Налоги на глобальный доход", termImage = "https://unecon.ru/wp-content/uploads/2022/09/mezhdunarodnoe-nalogooblozhenie-i-regulirovanie.png", content = """
+        Международное налогообложение включает налоговые правила и нормы, применяемые к доходам, полученным из иностранных источников, и к налогоплательщикам, проживающим за границей.
+
+         Основные моменты:
+        - Резиденция: Определяет, какие доходы подлежат налогообложению.
+        - Двойное налогообложение: Проблема, когда один и тот же доход облагается налогом в двух странах.
+        - Налоговые соглашения: Двусторонние соглашения между странами, направленные на предотвращение двойного налогообложения.
+    """.trimIndent())
     )
+
 
     fun getTermById(id : Int) : Term {
         return terms.first { it.id == id }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
+import coil.load
 import com.mobteam.taxapp.R
 import com.mobteam.taxapp.databinding.FragmentTermBinding
 import com.mobteam.taxapp.domain.TermsRepository
@@ -37,6 +38,7 @@ class TermFragment : Fragment(R.layout.fragment_term) {
         binding.toolbar.setNavigationOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
+        binding.termImage.load(term.termImage)
 
     }
 
