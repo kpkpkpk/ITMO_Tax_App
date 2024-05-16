@@ -1,5 +1,8 @@
 package com.mobteam.taxapp.features.lessons.ui
 
+import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
@@ -18,6 +21,7 @@ import com.mobteam.taxapp.domain.CoursesRepository
 import com.mobteam.taxapp.features.lessons.presentation.LessonDetailsViewModel
 import com.mobteam.taxapp.features.lessons.presentation.LessonDetailsViewModelFactory
 import com.mobteam.taxapp.features.lessons.ui.recycler.LessonContentItemsFactory
+import com.mobteam.taxapp.features.lessons.ui.recycler.LessonDetailsPreviewVideoItem
 import com.mobteam.taxapp.features.lessons.ui.recycler.LessonDetailsViewHolderFactory
 import com.mobteam.taxapp.features.quizes.ui.QuizFragment
 import kotlinx.coroutines.flow.collectLatest
@@ -77,6 +81,15 @@ class LessonDetailsFragment : Fragment(R.layout.fragment_lesson_details) {
 
     private fun initRecycler() {
         recycler = TiRecyclerCoroutines(binding.recycler, LessonDetailsViewHolderFactory())
+        viewLifecycleOwner.lifecycleScope.launch {
+            recycler?.clickedItem<LessonDetailsPreviewVideoItem>(R.layout.item_lesson_video_preview)
+                ?.collectLatest {
+                    val intent =
+                        Intent(ACTION_VIEW, Uri.parse("https://youtu.be/lEFZJJCiueY")).apply {
+                        }
+                    startActivity(intent)
+                }
+        }
     }
 
     override fun onDestroyView() {
